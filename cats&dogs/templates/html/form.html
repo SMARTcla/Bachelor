@@ -1,0 +1,36 @@
+<div class="form" id="form">
+  <div class="formContainer">
+    <div class="formTitle">
+      <h2 class="text-center text-uppercase">
+        <strong>Upload your image</strong>
+      </h2>
+    </div>
+
+    <form method="post" class="formUpload" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="file-upload">
+        <div class="file-select">
+          <div class="file-select-button" id="fileName">Choose File</div>
+          <div class="file-select-name" id="noFile">No file chosen...</div>
+          {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+      </div>
+    </form>
+    <h2 class="text-center text-uppercase py-5">
+      <strong id="result"
+        >{{ result.0 }}<span class="font-monospace text-warning"
+          >{{ result.1 }}</span
+        >{{ result.2 }}
+        <span class="text-warning">{{result.3}}</span>
+      </strong>
+    </h2>
+  </div>
+  <div class="mb-5 text-white-50 arrow-down">
+    <i
+      class="fa fa-angle-double-down fa-4x"
+      aria-hidden="true"
+      style="color: #fff"
+    ></i>
+  </div>
+</div>
